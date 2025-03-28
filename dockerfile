@@ -10,6 +10,13 @@ EXPOSE 7474 7687
 # Set the default working directory
 WORKDIR /var/lib/neo4j
 
+
+# Install APOC Plugin
+# 1. Download APOC
+RUN apt-get update && apt-get install -y wget curl
+ARG APOC_VERSION=5.28.0 # Replace with the APOC version matching your Neo4j version
+RUN wget "https://github.com/neo4j/apoc/releases/download/${APOC_VERSION}/apoc-${APOC_VERSION}-all.jar" -O /var/lib/neo4j/plugins/apoc-${APOC_VERSION}-all.jar
+
 # Copy the custom Neo4j configuration file
 COPY neo4j.conf /var/lib/neo4j/conf/neo4j.conf
 
