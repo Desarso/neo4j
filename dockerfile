@@ -1,8 +1,15 @@
 # Use the official Neo4j image
-FROM neo4j:latest
+FROM neo4j:5.26.0  # Use Neo4j 5.26.0
 
 # Set environment variables for Neo4j
 ENV NEO4J_AUTH=neo4j/potato123
+
+ENV NEO4J_PLUGINS='["apoc-5.26.0-all"]'  # Force Neo4j to use APOC 5.26.0
+
+
+ENV NEO4J_apoc_export_file_enabled=true
+ENV NEO4J_apoc_import_file_enabled=true
+ENV NEO4J_apoc_import_file_use__neo4j__config=true
 
 # Enable APOC Extended
 ENV NEO4J_apoc_export_file_enabled=true
