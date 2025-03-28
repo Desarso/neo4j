@@ -1,5 +1,5 @@
 # Use the official Neo4j image
-FROM neo4j:5.26.0  # Use Neo4j 5.26.0
+FROM neo4j:5.26.0 
 
 # Set environment variables for Neo4j
 ENV NEO4J_AUTH=neo4j/potato123
