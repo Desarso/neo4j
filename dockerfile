@@ -2,7 +2,7 @@
 FROM neo4j:latest
 
 # Set environment variables for Neo4j
-ENV NEO4J_AUTH=neo4j/My$ecureP@ssw0rd!2025
+ENV NEO4J_AUTH=neo4j/potato123
 
 # Expose the necessary ports
 EXPOSE 7474 7687
